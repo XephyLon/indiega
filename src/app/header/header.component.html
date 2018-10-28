@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div fxLayout="row" fxLayoutAlign="space-around stretch">
+      <div class="logo"></div>
+    </div>
+    <ul fxFlex fxlayout="row" fxLayoutAlign="space-between stretch">
+      <li *ngFor="let link of links">
+        <a [routerLink]="link.router" mat-button>{{ link.title }}</a>
+      </li>
+    </ul>
+    <mat-icon>search</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
