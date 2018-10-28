@@ -10,12 +10,19 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   links = [
-    {title: 'homepage', router: '/'},
-    {title: 'about', router: ''},
-    {title: 'gallery', router: '/gallery'},
-    {title: 'games', router: '/games'},
-    {title: 'blog', router: '/blog'},
-    {title: 'contact us', router: '/contact-us'}
+    {title: 'homepage', router: '/', hasDropdown: false},
+    {title: 'about', router: '', hasDropdown: true},
+    {title: 'gallery', router: '/gallery', hasDropdown: false},
+    {title: 'games', router: '/games', hasDropdown: false},
+    {title: 'blog', router: '/blog', hasDropdown: false},
+    {title: 'contact us', router: '/contact-us', hasDropdown: false}
+  ]
+
+  dropdown = [
+    { title: 'About Us', router: '/about-us' },
+    { title: 'FAQ', router: '/about-us' },
+    { title: 'Team', router: '/about-us' },
+    { title: 'Confession Corner', router: '/confessions' }
   ]
 
   ngOnInit() {
