@@ -1,0 +1,13 @@
+<section fxLayout="row" fxLayoutAlign="center center">
+  <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="carouselTileItems$ | async">
+    <ngu-tile *nguCarouselDef="let item">
+      <div class="image" [style.background]="'url('+item.image+')'"></div>
+      <div class="content">
+        <h3> {{ item.subtitle }} </h3>
+        <h2> {{ item.title }} </h2>
+        <p> {{ item.text }} </p>
+        <button mat-raised-button> {{ item.buttonText }} </button>
+      </div>
+    </ngu-tile>
+  </ngu-carousel>
+</section>
