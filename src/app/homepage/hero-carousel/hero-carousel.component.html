@@ -1,8 +1,12 @@
 <section fxLayout="row" fxLayoutAlign="center center">
   <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="carouselTileItems$ | async">
-    <ngu-tile *nguCarouselDef="let item">
-      <div class="image" [style.background]="'url('+item.image+')'"></div>
-      <div class="content">
+    <ngu-tile fxLayout="column" fxLayoutAlign="center center" *nguCarouselDef="let item" class="tile">
+      <div
+      class="global--bg-image"
+      [style.background]="'url('+item.image+')'"
+      [style.backgroundSize]="'cover'"
+      [style.backgroundPosition]="'50% 50%'"></div>
+      <div class="content" fxLayout="column" fxLayoutAlign="center center">
         <h3> {{ item.subtitle }} </h3>
         <h2> {{ item.title }} </h2>
         <p> {{ item.text }} </p>

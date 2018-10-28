@@ -27,4 +27,21 @@ $indiega-theme: mat-light-theme($indiega-primary, $indiega-accent, $indiega-warn
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Agency FB', "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Agency FB';
+  color: #FFF;
+  text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+}
+
+section {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
