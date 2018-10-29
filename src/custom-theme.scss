@@ -19,7 +19,7 @@ $md-indiega: (
     700 : #161526,
     800 : #12111f,
     900 : #0a0a13,
-    A100 : #5757ff,
+    A100 : #9252ea,
     A200 : #2424ff,
     A400 : #0000f0,
     A700 : #0000d6,
@@ -62,9 +62,11 @@ $indiega-theme: mat-light-theme($indiega-primary, $indiega-accent, $indiega-warn
 html, body { height: 100%; }
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Agency FB';
   color: #FFF;
   text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+  background-color: map-get($indiega-primary, 600)
 }
 
 section {

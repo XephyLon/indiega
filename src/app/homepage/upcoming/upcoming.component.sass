@@ -1,0 +1,75 @@
+@import "../../../custom-theme.scss"
+
+a:hover
+  & .overlay
+    opacity: 1
+  & .slider-title
+    color: map-get($indiega-accent, A200)
+
+
+
+section
+  position: relative
+  padding-bottom: 6rem
+
+.bg
+  clip-path: polygon(100% 0, 100% 52%, 0 100%, 0 100%, 0 0)
+  background-color: map-get($indiega-primary, 500)
+  position: absolute
+  height: 100%
+  width: 100%
+  z-index: 0
+
+.title
+  padding-top: 10.8rem
+  margin-bottom: 2rem
+  width: 100%
+  z-index: 2
+  position: relative
+  text-align: center
+  &> h2
+    font-size: 2.85rem
+    margin: 0
+    padding: 1rem 3rem
+  &> h3
+    position: absolute
+    font-size: 6.2rem
+    color: rgba(map-get($indiega-primary, 400), .08)
+    text-shadow: none
+    user-select: none
+
+.img-wrapper
+  width: 180px
+  height: 180px
+  display: inline-block
+  border-radius: 50%
+  overflow: hidden
+  position: relative
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+  transition: .5s ease
+  background: linear-gradient(to right, rgba(map-get($indiega-accent, 200), 0.64) 0%, rgba(map-get($indiega-primary, A100), 0.64) 100%)
+
+.slider-title
+  color: #ffffff
+  font-size: 2.85rem
+  font-weight: 700
+  line-height: normal
+  white-space: nowrap
+  width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  transition: all 0.3s ease-out
+
+.date
+  color: #FFF
+
+.wrapper
+  width: 1280px

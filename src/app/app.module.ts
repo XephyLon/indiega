@@ -11,12 +11,14 @@ import { NguCarouselModule } from '@ngu/carousel'
 
 import { HeaderComponent } from './header/header.component';
 import { HeroCarouselComponent } from './homepage/hero-carousel/hero-carousel.component';
+import { UpcomingComponent } from './homepage/upcoming/upcoming.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HeroCarouselComponent
+    HeroCarouselComponent,
+    UpcomingComponent
   ],
   imports: [
     BrowserModule,
