@@ -87,3 +87,25 @@ li {
   color: #FFF !important;
   background-color: map-get($indiega-accent , 400 ) !important
 }
+
+.point {
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 25%;
+  user-select: none;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  transform: rotate(90deg);
+  &:hover {
+    transform: scale(1.2);
+    color: map-get($indiega-accent, 200);
+    transition: all .25s ease-out;
+  }
+}
+
+
+.active {
+  transform: scale(1.2);
+  color: map-get($indiega-accent, 200);
+  transition: all .25s ease-out;
+}

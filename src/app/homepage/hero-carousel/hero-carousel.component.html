@@ -13,5 +13,15 @@
         <button mat-raised-button> {{ item.buttonText }} </button>
       </div>
     </ngu-tile>
+    <div class="points" NguCarouselPoint>
+      <div
+      matRipple
+      matRippleColor="accent"
+      class="point"
+      *ngFor="let i of myCarousel.pointNumbers; let i=index"
+      [class.active]="i == myCarousel.activePoint"
+      (click)="myCarousel.moveTo(i)"
+      >0{{ i + 1 }}</div>
+    </div>
   </ngu-carousel>
 </section>
