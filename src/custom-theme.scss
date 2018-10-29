@@ -8,11 +8,44 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+$md-indiega: (
+    50 : #e4e4e6,
+    100 : #bcbbc2,
+    200 : #8f8e99,
+    300 : #626170,
+    400 : #403f51,
+    500 : #1e1d32,
+    600 : #1a1a2d,
+    700 : #161526,
+    800 : #12111f,
+    900 : #0a0a13,
+    A100 : #5757ff,
+    A200 : #2424ff,
+    A400 : #0000f0,
+    A700 : #0000d6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$indiega-primary: mat-palette($mat-indigo);
-$indiega-accent: mat-palette($mat-pink, A200, A100, A400);
+$indiega-primary: mat-palette($md-indiega);
+$indiega-accent: mat-palette($mat-cyan, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $indiega-warn: mat-palette($mat-red);
@@ -44,4 +77,13 @@ a {
 
 li {
   list-style-type: none;
+}
+
+[mat-raised-button] {
+  color: map-get($indiega-accent, 400);
+}
+
+[mat-raised-button]:hover {
+  color: #FFF !important;
+  background-color: map-get($indiega-accent , 400 ) !important
 }
