@@ -1,10 +1,7 @@
 <section fxLayout="row" fxLayoutAlign="center center">
   <div fxLayout="column" fxLayoutAlign="start center" class="wrapper">
     <div class="bg"></div>
-    <div fxFlex class="title" fxLayout="column nowrap" fxLayoutAlign="center center">
-      <h2>Sample Title</h2>
-      <h3>Sample Background</h3>
-    </div>
+    <app-section-title [shadow]="'Shadow Sample #2'">Title Sample</app-section-title>
     <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="tiles">
       <ngu-tile *nguCarouselDef="let item">
         <li>

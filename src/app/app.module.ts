@@ -12,13 +12,17 @@ import { NguCarouselModule } from '@ngu/carousel'
 import { HeaderComponent } from './header/header.component';
 import { HeroCarouselComponent } from './homepage/hero-carousel/hero-carousel.component';
 import { UpcomingComponent } from './homepage/upcoming/upcoming.component';
+import { LatestPostsComponent } from './homepage/latest-posts/latest-posts.component';
+import { SectionTitleComponent } from './global/section-title/section-title.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HeroCarouselComponent,
-    UpcomingComponent
+    UpcomingComponent,
+    LatestPostsComponent,
+    SectionTitleComponent
   ],
   imports: [
     BrowserModule,

@@ -61,22 +61,26 @@ $md-indiega: (
 
     $LG : linear-gradient(to right, rgba(map-get($indiega-accent, A200), 0.64) 0%, rgba(map-get($indiega-primary, A100), 0.64) 100%);
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Agency FB';
-      color: #FFF;
-      text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
-      background-color: map-get($indiega-primary, 600)
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Agency FB';
+  color: #FFF;
+  text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+  background-color: map-get($indiega-primary, 600)
+}
 
-    section {
-      position: relative;
-    }
+section {
+  position: relative;
+}
 
-    a {
-      text-decoration: none;
-    }
+a {
+  text-decoration: none;
+}
+
+app-section-title {
+  width: 100%;
+}
 
 li {
   list-style-type: none;
