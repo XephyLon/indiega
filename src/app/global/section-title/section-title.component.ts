@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-section-title',
+  // tslint:disable-next-line:component-selector
+  selector: 'section-title',
   templateUrl: './section-title.component.html',
   styleUrls: ['./section-title.component.sass']
 })

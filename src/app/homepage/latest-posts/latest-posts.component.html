@@ -1,6 +1,19 @@
 <section>
   <div class="bg"></div>
   <div fxLayout="column" fxLayoutAlign="start center" class="wrapper">
-    <app-section-title fxFlex [shadow]="'Shadow Sample #2'">Title Sample #2</app-section-title>
+    <section-title fxFlex [shadow]="'Shadow Sample #2'">Title Sample #2</section-title>
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+      <mat-card>
+        <img mat-card-image src="assets/images/blog-img-1.jpg">
+        <div class="top-row" fxLayout="row" fxLayoutAlign="space-between center">
+
+        </div>
+        <mat-card-title-group>
+          <mat-card-title>Card Title Sample</mat-card-title>
+          <mat-card-subtitle>Card Subtitle Sample</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card>
+    </div>
   </div>
+
 </section>

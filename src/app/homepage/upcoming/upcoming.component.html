@@ -1,7 +1,7 @@
 <section fxLayout="row" fxLayoutAlign="center center">
   <div fxLayout="column" fxLayoutAlign="start center" class="wrapper">
     <div class="bg"></div>
-    <app-section-title [shadow]="'Shadow Sample #2'">Title Sample</app-section-title>
+    <section-title [shadow]="'Shadow Sample #2'">Title Sample</section-title>
     <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="tiles">
       <ngu-tile *nguCarouselDef="let item">
         <li>
