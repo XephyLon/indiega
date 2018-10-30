@@ -6,11 +6,63 @@ a:hover
   & .slider-title
     color: map-get($indiega-accent, A200)
 
-
+ngu-tile
+  padding: 1.9rem
 
 section
   position: relative
   padding-bottom: 6rem
+
+.card
+  background-color: map-get($indiega-primary, 400)
+  position: relative
+  padding: 4rem 7.14rem
+  border-radius: 10px
+
+  &__top-row
+    font-size: .9rem
+    font-family: Roboto
+    text-transform: uppercase
+    font-weight: 700
+
+  &__image
+    background-image: url('../../../assets/images/game-slide-img-1.jpg')
+    width: 570px
+    height: 450px
+    position: absolute
+    right: -50px
+    border-radius: 10px
+
+  &__text
+    padding-right: 4rem
+
+    &__title
+      font-size: 2rem
+      margin-top: .3rem
+      text-transform: uppercase
+    &__tag
+      word-spacing: 20px
+      color: map-get($indiega-accent, A200)
+    &__button
+      margin-top: 1rem
+      border-radius: 10px
+      padding: 1rem 4.28rem
+      background: $LG
+      text-transform: uppercase
+    &__paragraph
+      margin-top: 3.57rem
+      &> p
+        margin-bottom: 2rem
+        color: map-get($indiega-accent, 50)
+        font-weight: 100
+        font-family: roboto
+        font-size: 1rem
+        line-height: 1.5rem
+    &__rate
+      &> mat-icon
+        font-size: 1rem !important
+        color: #f9a450
+
 
 .bg
   clip-path: polygon(100% 0, 100% 52%, 0 100%, 0 100%, 0 0)
@@ -45,6 +97,8 @@ section
   border-radius: 50%
   overflow: hidden
   position: relative
+  margin-bottom: 1rem
+
 .overlay
   position: absolute
   top: 0
@@ -55,7 +109,7 @@ section
   width: 100%
   opacity: 0
   transition: .5s ease
-  background: linear-gradient(to right, rgba(map-get($indiega-accent, 200), 0.64) 0%, rgba(map-get($indiega-primary, A100), 0.64) 100%)
+  background: $LG
 
 .slider-title
   color: #ffffff
