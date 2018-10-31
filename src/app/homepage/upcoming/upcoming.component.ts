@@ -1,16 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Observable, interval } from 'rxjs';
+import { Component } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
-import { startWith, take, map } from 'rxjs/operators';
 
 @Component({
   selector: "app-upcoming",
   templateUrl: "./upcoming.component.html",
   styleUrls: ["./upcoming.component.sass"]
 })
-export class UpcomingComponent implements OnInit {
-  @Input()
-  name: string;
+export class UpcomingComponent {
   tiles = [
     {
       title: "Title Sample #1",
@@ -34,7 +30,6 @@ export class UpcomingComponent implements OnInit {
     }
   ];
 
-  public carouselTileItems$: Observable<number[]>;
   public carouselTileConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 3, md: 4, lg: 4, all: 0 },
     speed: 800,
@@ -49,8 +44,4 @@ export class UpcomingComponent implements OnInit {
 
   tempData: any[];
 
-  constructor() {}
-
-  ngOnInit() {
-  }
 }

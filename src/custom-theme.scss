@@ -118,3 +118,7 @@ li {
   color: map-get($indiega-accent, 200);
   transition: all .25s ease-out;
 }
+
+.wrapper {
+  max-width: 1280px;
+}

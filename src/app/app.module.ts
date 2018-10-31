@@ -14,6 +14,7 @@ import { HeroCarouselComponent } from './homepage/hero-carousel/hero-carousel.co
 import { UpcomingComponent } from './homepage/upcoming/upcoming.component';
 import { LatestPostsComponent } from './homepage/latest-posts/latest-posts.component';
 import { SectionTitleComponent } from './global/section-title/section-title.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SectionTitleComponent } from './global/section-title/section-title.comp
     HeroCarouselComponent,
     UpcomingComponent,
     LatestPostsComponent,
-    SectionTitleComponent
+    SectionTitleComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,

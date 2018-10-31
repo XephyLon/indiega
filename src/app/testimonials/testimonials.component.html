@@ -1,0 +1,26 @@
+<section fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlex fxLayout="column" fxLayoutAlign="center center" class="wrapper">
+    <section-title fxFlex [shadow]="'All Reviews'">
+      Testimonials
+    </section-title>
+    <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="blockQuotes">
+      <ngu-tile *nguCarouselDef="let item">
+        <blockquote>
+          <div class="image"></div>
+          <mat-icon>
+            format_quote
+          </mat-icon>
+          <div class="head-wrapper">
+            <h2> {{ item.title }} </h2>
+            <h3> {{ item.subtitle }} </h3>
+          </div>
+          <p>
+            «{{ item.text }}»
+          </p>
+        </blockquote>
+      </ngu-tile>
+      <button NguCarouselPrev class="left"></button>
+      <button NguCarouselNext class="right"></button>
+    </ngu-carousel>
+  </div>
+</section>

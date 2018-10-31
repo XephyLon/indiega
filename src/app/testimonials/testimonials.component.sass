@@ -1,0 +1,54 @@
+@import "../../custom-theme.scss"
+section
+  position: relative
+  background-color: map-get($indiega-primary, 500 )
+
+ngu-carousel
+  position: relative
+
+blockquote
+  margin: auto .3rem
+  margin-top: 3.5rem
+  position: relative
+  background-color: map-get($indiega-primary, 600)
+  padding: 70px
+  padding-top: 100px
+  text-align: center
+  border-radius: 10px
+  & > .image
+    position: absolute
+    border-radius: 50%
+    background-image: url("../../assets/images/testimonial-author-1.jpg")
+    top: -65px
+    left: 50%
+    transform: translateX(-50%)
+    max-width: 100%
+    width: 120px
+    height: 120px
+  & > mat-icon
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 12rem !important
+    width: auto !important
+    height: auto !important
+    color: map-get($indiega-primary, 500)
+    text-shadow: none
+  & .head-wrapper
+    text-transform: uppercase
+    line-height: 2rem
+  & h2
+    font-size: 2rem
+    margin-bottom: .1rem
+  & h3
+    margin-top: 0
+    font-size: .9rem
+    font-weight: 300
+    color: map-get($indiega-accent, A200)
+    font-family: roboto
+  & p
+    color: map-get($indiega-indigo, 100)
+    font-size: .9rem
+    font-weight: 100
+    font-family: roboto
+
