@@ -13,8 +13,8 @@ a
   @include mat-elevation(3)
   &:hover
     @include mat-elevation(9, map-get($indiega-accent, A200))
-    & .overlay
-      opacity: 1
+    & mat-card-title
+      color: map-get($indiega-accent, A200) !important
 
 .image-wrapper
   position: relative
@@ -25,6 +25,7 @@ mat-card
   background-color: map-get($indiega-primary, 400) !important
   text-shadow: none !important
   &-title
+    transition: color .3s ease-out
     color: #FFF !important
     font-family: 'Agency FB' !important
     font-size: 1.7rem !important
