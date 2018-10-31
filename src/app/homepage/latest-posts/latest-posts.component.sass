@@ -2,3 +2,56 @@
 
 .wrapper
   max-width: 1280px
+
+a
+  margin: 1rem
+  max-height: 680px
+  max-width: 360px
+
+  border-radius: 10px !important
+  @include mat-elevation-transition
+  @include mat-elevation(3)
+  &:hover
+    @include mat-elevation(9, map-get($indiega-accent, A200))
+    & .overlay
+      opacity: 1
+
+.image-wrapper
+  position: relative
+
+
+mat-card
+  border-radius: 10px !important
+  background-color: map-get($indiega-primary, 400) !important
+  text-shadow: none !important
+  &-title
+    color: #FFF !important
+    font-family: 'Agency FB' !important
+    font-size: 1.7rem !important
+    font-weight: 700 !important
+    text-transform: uppercase
+    padding: 1rem 0
+  &-content
+    color: map-get($indiega-indigo, 100)
+    font-size: 1rem
+    font-weight: 100
+    line-height: 1.5rem
+  &-footer
+    padding: 2rem 3.5rem
+    color: map-get($indiega-indigo, 100)
+    border-top: 1px solid rgba(map-get($indiega-indigo, 100), .1)
+
+.card-wrapper
+  padding: 3rem
+  padding-bottom: 0
+
+.top-row
+  font-size: .9rem
+  text-transform: uppercase
+
+.accent
+  color: map-get($indiega-accent, A200)
+
+.date
+  color: map-get($indiega-indigo, 100)
+

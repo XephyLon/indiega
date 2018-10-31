@@ -51,6 +51,8 @@ $md-indiega: (
     // The warn palette is optional (defaults to red).
     $indiega-warn: mat-palette($mat-red);
 
+    $indiega-indigo: mat-palette($mat-indigo, 100);
+
     // Create the theme object (a Sass map containing all of the palettes).
     $indiega-theme: mat-light-theme($indiega-primary, $indiega-accent, $indiega-warn);
 
