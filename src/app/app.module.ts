@@ -1,20 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatRippleModule, MatCardModule } from '@angular/material';
-import { NguCarouselModule } from '@ngu/carousel'
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { NgSelectModule } from "@ng-select/ng-select";
+import { FormsModule } from "@angular/forms";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule,
+  MatMenuModule,
+  MatRippleModule,
+  MatCardModule,
+  MatTabsModule,
+  MatDividerModule
+} from "@angular/material";
+import { NguCarouselModule } from "@ngu/carousel";
 
-import { HeaderComponent } from './header/header.component';
-import { HeroCarouselComponent } from './homepage/hero-carousel/hero-carousel.component';
-import { UpcomingComponent } from './homepage/upcoming/upcoming.component';
-import { LatestPostsComponent } from './homepage/latest-posts/latest-posts.component';
-import { SectionTitleComponent } from './global/section-title/section-title.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { HeaderComponent } from "./header/header.component";
+import { HeroCarouselComponent } from "./homepage/hero-carousel/hero-carousel.component";
+import { UpcomingComponent } from "./homepage/upcoming/upcoming.component";
+import { LatestPostsComponent } from "./homepage/latest-posts/latest-posts.component";
+import { SectionTitleComponent } from "./global/section-title/section-title.component";
+import { TestimonialsComponent } from "./testimonials/testimonials.component";
+import { TabsComponent } from "./homepage/tabs/tabs.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +34,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     UpcomingComponent,
     LatestPostsComponent,
     SectionTitleComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,10 +51,10 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     NguCarouselModule,
     MatRippleModule,
     MatCardModule,
-
-
+    MatTabsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

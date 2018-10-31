@@ -1,0 +1,49 @@
+@import "../../../custom-theme.scss"
+section
+  position: relative
+  padding: 10rem 0
+  background-color: map-get($indiega-primary, 500)
+
+h2
+  font-family: 'Agency FB'
+  font-size: 2rem
+  text-transform: uppercase
+p
+  font-size: 1rem
+  color: map-get($indiega-indigo, 100)
+  line-height: 1.5rem
+  margin-bottom: 1rem
+
+mat-tab-group
+  background-color: map-get($indiega-primary, 600)
+
+.wrapper
+  min-height: 800px
+
+.text-content
+  padding: 3rem
+
+.video
+  position: absolute
+  z-index: -1
+  top: 0px
+  left: 0px
+  bottom: 0px
+  right: 0px
+  overflow: hidden
+  background-size: cover
+  background-color: transparent
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  background-image: url("../../../assets/images/585x550.jpg")
+
+button
+  margin-top: 1rem
+  margin-bottom: 2rem
+  border-radius: 10px
+  padding: 1rem 4.28rem
+  background: $LG !important
+  text-transform: uppercase
+
+mat-divider
+  border-top-color: rgba(map-get($indiega-primary, 300), .3) !important
