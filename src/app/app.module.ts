@@ -25,6 +25,7 @@ import { LatestPostsComponent } from "./homepage/latest-posts/latest-posts.compo
 import { SectionTitleComponent } from "./global/section-title/section-title.component";
 import { TestimonialsComponent } from "./testimonials/testimonials.component";
 import { TabsComponent } from "./homepage/tabs/tabs.component";
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TabsComponent } from "./homepage/tabs/tabs.component";
     LatestPostsComponent,
     SectionTitleComponent,
     TestimonialsComponent,
-    TabsComponent
+    TabsComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
