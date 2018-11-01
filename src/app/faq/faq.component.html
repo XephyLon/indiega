@@ -1,14 +1,20 @@
 <section fxLayout="row" fxLayoutAlign="center center">
-  <div fxFlex fxLayout="row" fxLayoutAlign="center center" class="wrapper">
+  <div fxFlex fxLayout="column" fxLayoutAlign="center center" class="wrapper">
     <div fxFlex fxLayout="column" fxLayoutAlign="center center">
-      <section-title [shadow]="'You should know this'">
+      <section-title fxFlex [shadow]="'You should know this'">
         Frequently Asked Questions
       </section-title>
-      <p>Corned beef ham frankfurter cow, strip steak shoulder doner flank. Pork chop spare ribs
+      <p fxFlex="20%">Corned beef ham frankfurter cow, strip steak shoulder doner flank. Pork chop spare ribs
       pork ball tip. Prosciutto jowl meatball shankю</p>
     </div>
-    <div class="content">
-
+    <div fxLayout="row wrap" fxLayoutAlign="center center" class="content">
+      <div fxFlex="50%" fxLayoutAlign="center center" *ngFor="let item of faqs; let i = index"  class="_wrapper">
+        <div fxFlexAlign="start" class="count"> 0{{ i + 1 }} </div>
+        <div>
+          <h2> {{ item.title }} </h2>
+          <p> {{ item.text }} </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -1,11 +1,48 @@
 @import "../../custom-theme.scss"
 
+section
+  position: relative
+  padding-bottom: 5rem
+
 p
   font-size: 1rem
   font-family: roboto
   font-weight: 100
   color: map-get($indiega-indigo, 100)
   text-align: center
-  width: 600px
+  line-height: 1.5rem
 
 
+.count
+  background: $LG
+  border-radius: 50%
+  font-size: 3rem
+  min-width: 100px
+  height: 100px
+  line-height: 100px
+  text-align: center
+  margin: 1.3rem
+
+._wrapper
+  border-bottom: 1px solid map-get($indiega-primary, 300)
+  padding: 3rem
+  & p
+    text-align: left
+  & h2
+    padding-bottom: 1rem
+    text-transform: uppercase
+  &:nth-child(even)
+    border-left: 1px solid map-get($indiega-primary, 300)
+    & .count
+      order: 2
+    & h2
+      text-align: right
+    & p
+      text-align: right
+  &:nth-last-child(1)
+    border-bottom: none
+  &:nth-last-child(2)
+    border-bottom: none
+
+.content
+  margin-top: 5.625rem
