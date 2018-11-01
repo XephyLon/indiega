@@ -28,6 +28,7 @@ import { TestimonialsComponent } from "./testimonials/testimonials.component";
 import { TabsComponent } from "./homepage/tabs/tabs.component";
 import { FaqComponent } from './faq/faq.component';
 import { NewsletterComponent } from './homepage/newsletter/newsletter.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { NewsletterComponent } from './homepage/newsletter/newsletter.component'
     TestimonialsComponent,
     TabsComponent,
     FaqComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
