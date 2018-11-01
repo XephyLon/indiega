@@ -31,6 +31,7 @@ import { FaqComponent } from './faq/faq.component';
 import { NewsletterComponent } from './homepage/newsletter/newsletter.component';
 import { FooterComponent } from './footer/footer.component';
 import { OnscrollDirective } from './onscroll.directive';
+import { WINDOW_PROVIDERS } from "./window.service";
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { OnscrollDirective } from './onscroll.directive';
     MatInputModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [ WINDOW_PROVIDERS ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

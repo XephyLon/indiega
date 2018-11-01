@@ -1,5 +1,5 @@
 <section fxLayout="row" fxLayoutAlign="center center">
-  <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="carouselTileItems$ | async">
+  <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="tiles">
     <ngu-tile fxLayout="column" fxLayoutAlign="center center" *nguCarouselDef="let item" class="tile">
       <div
       class="global--bg-image"

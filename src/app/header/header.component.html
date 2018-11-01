@@ -1,6 +1,6 @@
 <mat-toolbar #navBar color="primary">
   <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" >
-      <div class="logo"></div>
+      <div #logo class="logo"></div>
     <ul fxFlex fxLayoutAlign="space-around">
       <li *ngFor="let link of links">
         <ng-container *ngIf="link.hasDropdown; then thenTemplate; else elseTemplate"></ng-container>

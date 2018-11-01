@@ -34,7 +34,6 @@ export class HeroCarouselComponent implements OnInit {
     }
   ]
 
-  public carouselTileItems$: Observable<number[]>
   public carouselTileConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
     speed: 800,
@@ -47,23 +46,11 @@ export class HeroCarouselComponent implements OnInit {
     animation: 'lazy'
   }
 
-  tempData: any[]
 
   constructor() { }
 
   ngOnInit() {
-    this.tempData = []
-    this.carouselTileItems$ = interval(2000).pipe(
-      startWith(this.tiles.length - 1),
-      take(3),
-      map((val) => {
-        const data = (this.tempData = [
-          ...this.tempData,
-          this.tiles[val]
-        ])
-        return data
-      })
-    )
+
   }
 
 }
