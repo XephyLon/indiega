@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { MatToolbar } from '@angular/material';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/co
   styleUrls: ["./header.component.sass"]
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('navBar') private navbar: ElementRef
+  @ViewChild('navBar') private navbar: MatToolbar
   constructor(public renderer: Renderer2) {}
 
 
@@ -28,6 +29,5 @@ export class HeaderComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.renderer.addClass(this.navbar.nativeElement, 'scrolled')
   }
 }
