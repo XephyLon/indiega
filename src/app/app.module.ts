@@ -14,7 +14,8 @@ import {
   MatRippleModule,
   MatCardModule,
   MatTabsModule,
-  MatDividerModule
+  MatDividerModule,
+  MatInputModule
 } from "@angular/material";
 import { NguCarouselModule } from "@ngu/carousel";
 
@@ -26,6 +27,7 @@ import { SectionTitleComponent } from "./global/section-title/section-title.comp
 import { TestimonialsComponent } from "./testimonials/testimonials.component";
 import { TabsComponent } from "./homepage/tabs/tabs.component";
 import { FaqComponent } from './faq/faq.component';
+import { NewsletterComponent } from './homepage/newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { FaqComponent } from './faq/faq.component';
     SectionTitleComponent,
     TestimonialsComponent,
     TabsComponent,
-    FaqComponent
+    FaqComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { FaqComponent } from './faq/faq.component';
     MatRippleModule,
     MatCardModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
