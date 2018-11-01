@@ -1,11 +1,21 @@
-<footer>
-  <div fxLayout="row" fxLayoutAlign="space-around start" class="wrapper">
-    <div class="logo"></div>
-    <div fxLayout="column" fxLayoutAlign="center center">
-      <p></p>
-      <div fxLayout="row" fxLayoutAlign="end center" class="social-media">
-        <div class="social-media__link"></div>
+<footer fxLayout="row" fxLayoutAlign="center center">
+  <div class="overlay"></div>
+  <div fxFlex fxLayout="column" fxLayoutAlign="space-between center" class="wrapper">
+    <div fxLayout="row" fxLayoutAlign="space-between start" class="footer-content-wrapper">
+      <div class="logo"></div>
+      <div fxFlex="45%" fxLayout="column" fxLayoutAlign="center end">
+        <p class="footer-text">Andouille landjaeger flank boudin. Jerky cupim alcatra sirloin porchetta,
+        turkey short ribs leberkas doner bacon pancetta buffalo.</p>
+        <div fxLayout="row" fxLayoutAlign="end center" class="social-media">
+          <a fxFlexAlign="end" *ngFor="let item of icons; let i = index" href="#" class="social-media__link">
+            <fa-icon [icon]="item"></fa-icon>
+          </a>
+        </div>
       </div>
+    </div>
+    <div fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="space-between center" class="bottom-row">
+      <p>© Copyright 2018</p>
+      <p>All Rights Reserved</p>
     </div>
   </div>
 </footer>

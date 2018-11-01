@@ -1,18 +1,28 @@
+@import "../../custom-theme.scss"
+
 a
   text-transform: uppercase
 
 mat-toolbar
-  background: rgba(#1e1d32 ,.5) !important
+  background: rgba(map-get($indiega-primary, 500) ,.5) !important
   height: 150px
   padding: 0 100px
   box-shadow: 3.5px 6.1px 30px rgba(0, 0, 0, 0.57)
+  transition: .3s
   &-row
     height: 100%
+
+.scrolled
+  background: map-get($indiega-primary, 500) !important
+  height: 100px !important
+
 
 .logo
   background-image: url('../../assets/images/logo.png')
   width: 253px
   height: 90px
+  &-scrolled
+    transform: scale(.8)
 
 ul
   max-width: 860px
@@ -23,7 +33,7 @@ mat-icon
 
 button[mat-button]
   text-transform: uppercase
-  border: 2px solid #7c69e3
+  border: 2px solid map-get($indiega-primary, A100)
   border-radius: 10px
   width: 220px
   height: 60px

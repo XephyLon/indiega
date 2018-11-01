@@ -18,6 +18,7 @@ import {
   MatInputModule
 } from "@angular/material";
 import { NguCarouselModule } from "@ngu/carousel";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { HeaderComponent } from "./header/header.component";
 import { HeroCarouselComponent } from "./homepage/hero-carousel/hero-carousel.component";
@@ -29,6 +30,7 @@ import { TabsComponent } from "./homepage/tabs/tabs.component";
 import { FaqComponent } from './faq/faq.component';
 import { NewsletterComponent } from './homepage/newsletter/newsletter.component';
 import { FooterComponent } from './footer/footer.component';
+import { OnscrollDirective } from './onscroll.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { FooterComponent } from './footer/footer.component';
     TabsComponent,
     FaqComponent,
     NewsletterComponent,
-    FooterComponent
+    FooterComponent,
+    OnscrollDirective
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { FooterComponent } from './footer/footer.component';
     MatCardModule,
     MatTabsModule,
     MatDividerModule,
-    MatInputModule
+    MatInputModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
