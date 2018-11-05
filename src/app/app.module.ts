@@ -31,6 +31,10 @@ import { FaqComponent } from './faq/faq.component';
 import { NewsletterComponent } from './homepage/newsletter/newsletter.component';
 import { FooterComponent } from './footer/footer.component';
 import { WINDOW_PROVIDERS } from "./window.service";
+import { TitleHeaderComponent } from './title-header/title-header.component';
+import { BreadcrumbComponent } from './global/breadcrumb/breadcrumb.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { WINDOW_PROVIDERS } from "./window.service";
     FaqComponent,
     NewsletterComponent,
     FooterComponent,
+    TitleHeaderComponent,
+    BreadcrumbComponent,
+    HomepageComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
