@@ -1,42 +1,76 @@
 import { BreadCrumb } from "./breadcrumb.interface";
-import { Component, ViewEncapsulation } from "@angular/core";
-import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
-import { filter, distinctUntilChanged, map, startWith } from "rxjs/operators";
+import { Component, OnInit } from "@angular/core";
+import {
+  Router,
+  ActivatedRoute,
+  NavigationEnd,
+  PRIMARY_OUTLET
+} from "@angular/router";
+import { filter } from "rxjs/operators";
 
 @Component({
   selector: "app-breadcrumb",
   templateUrl: "./breadcrumb.component.html",
-  styleUrls: ["./breadcrumb.component.sass"],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ["./breadcrumb.component.sass"]
 })
-export class BreadcrumbComponent {
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+export class BreadcrumbComponent implements OnInit {
+  public breadcrumbs: BreadCrumb[];
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
-  breadCrumbs$ = this.router.events.pipe(
-    filter(event => event instanceof NavigationEnd),
-    distinctUntilChanged(),
-    map(() => this.buildBreadCrumb(this.activatedRoute.root)),
-    startWith(this.buildBreadCrumb(this.activatedRoute.root))
-  );
-
-  buildBreadCrumb(
-    route: ActivatedRoute,
-    url?: string,
-    breadcrumbs?: Array<BreadCrumb>
-  ): Array<BreadCrumb> {
-    const label = route.routeConfig
-      ? route.routeConfig.data["breadcrumb"]
-      : "Home";
-    const path = route.routeConfig ? route.routeConfig.path : "";
-    const nextUrl = `${url}${path}/`;
-    const breadcrumb = {
-      label: label,
-      url: nextUrl
+  ngOnInit() {
+    let breadcrumb: BreadCrumb = {
+      label: "Home",
+      url: ""
     };
-    const newBreadCrumbs = [...breadcrumbs, breadcrumb];
-    if (route.firstChild) {
-      return this.buildBreadCrumb(route.firstChild, nextUrl, newBreadCrumbs);
-    }
-    return newBreadCrumbs;
+
+    this.router.events
+      .pipe(filter(ev => ev instanceof NavigationEnd))
+      .subscribe(() => {
+        let root: ActivatedRoute = this.route.root;
+        this.breadcrumbs = this.getBreadCrumbs(root);
+        this.breadcrumbs = [breadcrumb, ...this.breadcrumbs];
+      });
   }
+
+  private getBreadCrumbs(
+    route: ActivatedRoute,
+    url: string = "",
+    breadcrumbs: BreadCrumb[] = []
+  ): BreadCrumb[] {
+    const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
+
+    let children: ActivatedRoute[] = route.children;
+
+    if (children.length === 0) return breadcrumbs;
+
+    for (let child of children) {
+      if (child.outlet !== PRIMARY_OUTLET || child.snapshot.url.length === 0) {
+        continue;
+      }
+
+      if (!child.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB)) {
+        return this.getBreadCrumbs(child, url, breadcrumbs);
+      }
+
+      let routeURL: string = child.snapshot.url
+        .map(segment => segment.path)
+        .join("/");
+
+      url += `/${routeURL}`;
+
+      let breadcrumb: BreadCrumb = {
+        label: child.snapshot.data[ROUTE_DATA_BREADCRUMB],
+        url: url
+      };
+
+      breadcrumbs.push(breadcrumb);
+
+      //recursive
+      return this.getBreadCrumbs(child, url, breadcrumbs);
+    }
+
+    return breadcrumbs;
+  }
+
+  // TODO: Don't forget to implement ngOnDestroy to ubsubscribe
 }

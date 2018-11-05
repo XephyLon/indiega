@@ -1,5 +1,7 @@
-<ol>
-  <li *ngFor="let breadcrumb of breadCrumbs$ | async" class="breadcrumb">
-    <a [routerLink]="[breadcrumb.url, breadcrumb.params]"></a>
+<ul class="breadcrumb">
+  <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item">
+    <a [routerLink]="breadcrumb.url">
+      {{ breadcrumb.label }}
+    </a>
   </li>
-</ol>
+</ul>
