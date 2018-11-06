@@ -1,15 +1,16 @@
+import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
-import { BrowserModule } from "@angular/platform-browser";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { NgSelectModule } from "@ng-select/ng-select";
 import { FormsModule } from "@angular/forms";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
+  MatExpansionModule,
   MatIconModule,
   MatInputModule,
   MatMenuModule,
@@ -75,7 +76,8 @@ import { CountsComponent } from './about/counts/counts.component';
     MatTabsModule,
     MatDividerModule,
     MatInputModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatExpansionModule
   ],
   providers: [ WINDOW_PROVIDERS ],
   bootstrap: [AppComponent]
