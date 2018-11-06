@@ -43,6 +43,7 @@ export class HeaderComponent implements AfterViewInit {
     { title: "Confession Corner", router: "/confessions" }
   ];
 
+  // On Scroll function to dynamicall add/remove CSS classes
   @HostListener("window:scroll", [])
   onScroll(): void {
     const offset =
