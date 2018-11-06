@@ -26,7 +26,6 @@ export class HeaderComponent implements AfterViewInit {
     @Inject(WINDOW) private window: Window,
     public renderer: Renderer2
   ) {}
-  @HostListener("window:scroll", [])
 
   links = [
     { title: "homepage", router: "/", hasDropdown: false },
@@ -44,6 +43,7 @@ export class HeaderComponent implements AfterViewInit {
     { title: "Confession Corner", router: "/confessions" }
   ];
 
+  @HostListener("window:scroll", [])
   onScroll(): void {
     const offset =
       this.window.pageYOffset ||

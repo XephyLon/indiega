@@ -35,6 +35,8 @@ import { TitleHeaderComponent } from './title-header/title-header.component';
 import { BreadcrumbComponent } from './global/breadcrumb/breadcrumb.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
+import { SummaryComponent } from './about/summary/summary.component';
+import { CountsComponent } from './about/counts/counts.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { AboutComponent } from './about/about.component';
     TitleHeaderComponent,
     BreadcrumbComponent,
     HomepageComponent,
-    AboutComponent
+    AboutComponent,
+    SummaryComponent,
+    CountsComponent
   ],
   imports: [
     BrowserModule,
