@@ -42,6 +42,6 @@ export class UpcomingComponent {
     animation: "lazy"
   };
 
-  tempData: any[];
+  tempData: Array<any>;
 
 }

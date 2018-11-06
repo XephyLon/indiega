@@ -1,10 +1,10 @@
 import { BreadCrumb } from "./breadcrumb.interface";
 import { Component, OnInit } from "@angular/core";
 import {
-  Router,
   ActivatedRoute,
   NavigationEnd,
-  PRIMARY_OUTLET
+  PRIMARY_OUTLET,
+  Router
 } from "@angular/router";
 import { filter } from "rxjs/operators";
 
@@ -14,11 +14,11 @@ import { filter } from "rxjs/operators";
   styleUrls: ["./breadcrumb.component.sass"]
 })
 export class BreadcrumbComponent implements OnInit {
-  public breadcrumbs: BreadCrumb[];
+  public breadcrumbs: Array<BreadCrumb>;
   constructor(private route: ActivatedRoute, private router: Router) {}
 
-  ngOnInit() {
-    let breadcrumb: BreadCrumb = {
+  ngOnInit(): void {
+    const breadcrumb: BreadCrumb = {
       label: "Home",
       url: ""
     };
@@ -26,24 +26,24 @@ export class BreadcrumbComponent implements OnInit {
     this.router.events
       .pipe(filter(ev => ev instanceof NavigationEnd))
       .subscribe(() => {
-        let root: ActivatedRoute = this.route.root;
+        const root: ActivatedRoute = this.route.root;
         this.breadcrumbs = this.getBreadCrumbs(root);
         this.breadcrumbs = [breadcrumb, ...this.breadcrumbs];
       });
   }
 
-  private getBreadCrumbs(
+   getBreadCrumbs(
     route: ActivatedRoute,
     url: string = "",
-    breadcrumbs: BreadCrumb[] = []
-  ): BreadCrumb[] {
-    const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
+    breadcrumbs: Array<BreadCrumb> = []
+  ): Array<BreadCrumb> {
+    const ROUTE_DATA_BREADCRUMB = "breadcrumb";
 
-    let children: ActivatedRoute[] = route.children;
+    const CHILDREN: Array<ActivatedRoute> = route.children;
 
-    if (children.length === 0) return breadcrumbs;
+    if (CHILDREN.length === 0) { return breadcrumbs; }
 
-    for (let child of children) {
+    for (const child of CHILDREN) {
       if (child.outlet !== PRIMARY_OUTLET || child.snapshot.url.length === 0) {
         continue;
       }
@@ -52,20 +52,20 @@ export class BreadcrumbComponent implements OnInit {
         return this.getBreadCrumbs(child, url, breadcrumbs);
       }
 
-      let routeURL: string = child.snapshot.url
+      const ROUTE_URL: string = child.snapshot.url
         .map(segment => segment.path)
         .join("/");
 
-      url += `/${routeURL}`;
+      url += `/${ROUTE_URL}`;
 
-      let breadcrumb: BreadCrumb = {
+      const breadcrumb: BreadCrumb = {
         label: child.snapshot.data[ROUTE_DATA_BREADCRUMB],
-        url: url
+        url
       };
 
       breadcrumbs.push(breadcrumb);
 
-      //recursive
+      // recursive
       return this.getBreadCrumbs(child, url, breadcrumbs);
     }
 

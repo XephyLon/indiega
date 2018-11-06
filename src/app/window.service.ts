@@ -35,6 +35,7 @@ export function windowFactory(
   if (isPlatformBrowser(platformId)) {
     return browserWindowRef.nativeWindow;
   }
+
   return new Object();
 }
 

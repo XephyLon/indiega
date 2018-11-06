@@ -1,7 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Observable, interval } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
-import { startWith, take, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hero-carousel',
@@ -46,10 +44,9 @@ export class HeroCarouselComponent implements OnInit {
     animation: 'lazy'
   }
 
-
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
   }
 

@@ -1,13 +1,11 @@
-import { element } from "protractor";
 import {
+  AfterViewInit,
   Component,
-  OnInit,
-  Renderer2,
-  ViewChild,
   ElementRef,
   HostListener,
-  AfterViewInit,
-  Inject
+  Inject,
+  Renderer2,
+  ViewChild
 } from "@angular/core";
 import { MatToolbar } from "@angular/material";
 import { DOCUMENT } from "@angular/common";
@@ -29,22 +27,6 @@ export class HeaderComponent implements AfterViewInit {
     public renderer: Renderer2
   ) {}
   @HostListener("window:scroll", [])
-  onScroll() {
-    let offset =
-      this.window.pageYOffset ||
-      this.document.documentElement.scrollTop ||
-      this.document.body.scrollTop ||
-      0;
-      let navBar = this.navbar._elementRef.nativeElement
-      let _logo = this.logo.nativeElement
-    if (offset > 1) {
-      this.renderer.addClass(navBar, 'scrolled')
-      this.renderer.addClass(_logo, 'logo-scrolled')
-    } else {
-      this.renderer.removeClass(navBar, 'scrolled')
-      this.renderer.removeClass(_logo, 'logo-scrolled')
-    }
-  }
 
   links = [
     { title: "homepage", router: "/", hasDropdown: false },
@@ -62,5 +44,22 @@ export class HeaderComponent implements AfterViewInit {
     { title: "Confession Corner", router: "/confessions" }
   ];
 
-  ngAfterViewInit() {}
+  onScroll(): void {
+    const offset =
+      this.window.pageYOffset ||
+      this.document.documentElement.scrollTop ||
+      this.document.body.scrollTop ||
+      0;
+    const navBar = this.navbar._elementRef.nativeElement
+    const _logo = this.logo.nativeElement
+    if (offset > 1) {
+      this.renderer.addClass(navBar, 'scrolled')
+      this.renderer.addClass(_logo, 'logo-scrolled')
+    } else {
+      this.renderer.removeClass(navBar, 'scrolled')
+      this.renderer.removeClass(_logo, 'logo-scrolled')
+    }
+  }
+
+  ngAfterViewInit(): void {}
 }

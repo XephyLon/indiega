@@ -1,21 +1,21 @@
+import { AppRoutingModule } from "./app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { NgSelectModule } from "@ng-select/ng-select";
 import { FormsModule } from "@angular/forms";
-import { AppRoutingModule } from "./app-routing.module";
+import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
-  MatToolbarModule,
   MatButtonModule,
+  MatCardModule,
+  MatDividerModule,
   MatIconModule,
+  MatInputModule,
   MatMenuModule,
   MatRippleModule,
-  MatCardModule,
   MatTabsModule,
-  MatDividerModule,
-  MatInputModule
+  MatToolbarModule
 } from "@angular/material";
 import { NguCarouselModule } from "@ngu/carousel";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
@@ -52,7 +52,7 @@ import { AboutComponent } from './about/about.component';
     TitleHeaderComponent,
     BreadcrumbComponent,
     HomepageComponent,
-    AboutComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

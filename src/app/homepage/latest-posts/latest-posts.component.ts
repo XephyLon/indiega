@@ -9,7 +9,7 @@ export class LatestPostsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
