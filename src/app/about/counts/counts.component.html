@@ -1,3 +1,12 @@
-<p>
-  counts works!
-</p>
+<section>
+  <div class="overlay"></div>
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <div *ngFor="let item of features"  class="feat-wrapper">
+      <fa-icon [icon]="item.icon"></fa-icon>
+      <div class="text-content">
+        <h3> {{item.h3}} </h3>
+        <h4> {{item.h4}} </h4>
+      </div>
+    </div>
+  </div>
+</section>

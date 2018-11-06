@@ -1,0 +1,31 @@
+@import "../../../custom-theme.scss"
+
+section
+  background-image: url("../../../assets/images/about-bg.jpg")
+  background-size: cover
+  background-repeat: no-repeat
+  padding: 8rem 0
+
+.overlay
+  background: rgba(map-get($indiega-primary, 500), .8) !important
+  opacity: 1 !important
+
+fa-icon, h3, h4, .feat-wrapper
+  z-index: 9
+  text-align: center
+
+h3
+  font-size: 3rem
+  margin: 0
+  font-weight: 700
+
+h4
+  font-family: roboto
+  text-transform: uppercase
+  font-size: 1rem
+  font-weight: 700
+  margin: 0
+
+fa-icon
+  font-size: 3rem
+  color: map-get($indiega-accent, A400)
