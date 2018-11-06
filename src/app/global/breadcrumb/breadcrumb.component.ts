@@ -32,7 +32,7 @@ export class BreadcrumbComponent implements OnInit {
       });
   }
 
-   getBreadCrumbs(
+  getBreadCrumbs(
     route: ActivatedRoute,
     url: string = "",
     breadcrumbs: Array<BreadCrumb> = []
