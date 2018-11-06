@@ -72,5 +72,5 @@ export class BreadcrumbComponent implements OnInit {
     return breadcrumbs;
   }
 
-  // TODO: Don't forget to implement ngOnDestroy to ubsubscribe
+  // TODO: Don't forget to implement ngOnDestroy to unsubscribe
 }
