@@ -1,20 +1,22 @@
 import { BreadCrumb } from "./breadcrumb.interface";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import {
   ActivatedRoute,
   NavigationEnd,
   PRIMARY_OUTLET,
   Router
 } from "@angular/router";
-import { filter } from "rxjs/operators";
+import { filter, takeUntil } from "rxjs/operators";
+import { Subject } from "rxjs";
 
 @Component({
   selector: "app-breadcrumb",
   templateUrl: "./breadcrumb.component.html",
   styleUrls: ["./breadcrumb.component.sass"]
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent implements OnInit, OnDestroy {
   public breadcrumbs: Array<BreadCrumb>;
+  private unsubscribe: Subject<void> = new Subject();
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
@@ -22,9 +24,11 @@ export class BreadcrumbComponent implements OnInit {
       label: "Home",
       url: ""
     };
-
     this.router.events
-      .pipe(filter(ev => ev instanceof NavigationEnd))
+      .pipe(
+        takeUntil(this.unsubscribe),
+        filter(ev => ev instanceof NavigationEnd)
+      )
       .subscribe(() => {
         const root: ActivatedRoute = this.route.root;
         this.breadcrumbs = this.getBreadCrumbs(root);
@@ -41,7 +45,9 @@ export class BreadcrumbComponent implements OnInit {
 
     const CHILDREN: Array<ActivatedRoute> = route.children;
 
-    if (CHILDREN.length === 0) { return breadcrumbs; }
+    if (CHILDREN.length === 0) {
+      return breadcrumbs;
+    }
 
     for (const child of CHILDREN) {
       if (child.outlet !== PRIMARY_OUTLET || child.snapshot.url.length === 0) {
@@ -72,5 +78,9 @@ export class BreadcrumbComponent implements OnInit {
     return breadcrumbs;
   }
 
-  // TODO: Don't forget to implement ngOnDestroy to unsubscribe
+  ngOnDestroy(): void {
+    console.log("ngOnDestroy");
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
+  }
 }
