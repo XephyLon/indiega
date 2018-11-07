@@ -38,6 +38,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { SummaryComponent } from './about/summary/summary.component';
 import { CountsComponent } from './about/counts/counts.component';
+import { CoreComponent } from './core/core.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { CountsComponent } from './about/counts/counts.component';
     HomepageComponent,
     AboutComponent,
     SummaryComponent,
-    CountsComponent
+    CountsComponent,
+    CoreComponent
   ],
   imports: [
     BrowserModule,

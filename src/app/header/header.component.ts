@@ -38,7 +38,7 @@ export class HeaderComponent implements AfterViewInit {
 
   dropdown = [
     { title: "About Us", router: "/about-us" },
-    { title: "FAQ", router: "/about-us" },
+    { title: "FAQ", router: "/faq" },
     { title: "Team", router: "/about-us" },
     { title: "Confession Corner", router: "/confessions" }
   ];

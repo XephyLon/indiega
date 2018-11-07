@@ -56,3 +56,25 @@ app-header
   left: 0 !important
 .rightRs
   right: 0 !important
+
+// MatExpansionPanel config
+
+.mat-expansion-indicator::after
+  color: map-get($indiega-indigo, 100) !important
+
+mat-expansion-panel
+  background: map-get($indiega-primary, 600) !important
+  &-header
+    background: map-get($indiega-primary, 400) !important
+    transition: all .3s ease-out !important
+    &:hover, &:focus
+      background: $LG !important
+
+mat-panel-title
+  color: #FFF !important
+  font-size: .9rem !important
+  font-weight: 700
+  text-transform: uppercase
+
+.panel-active
+  background: $LG !important
