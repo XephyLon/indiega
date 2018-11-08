@@ -1,5 +1,5 @@
-import { LinksService } from './../shared/links.service';
-import { Links } from './../shared/links.model';
+import { LinksService } from "./../shared/links.service";
+import { Links } from "./../shared/links.model";
 import {
   Component,
   ElementRef,
@@ -11,7 +11,7 @@ import {
 } from "@angular/core";
 import { MatToolbar } from "@angular/material";
 import { DOCUMENT } from "@angular/common";
-import { WINDOW } from "../window.service";
+import { WINDOW } from "../shared/window.service";
 
 @Component({
   selector: "app-header",
@@ -21,11 +21,11 @@ import { WINDOW } from "../window.service";
 export class HeaderComponent implements OnInit {
   @ViewChild("navBar")
   private navbar: MatToolbar;
-  @ViewChild('logo')
-  private logo: ElementRef
+  @ViewChild("logo")
+  private logo: ElementRef;
 
-  links: Array<Links> = []
-  dropdown: Array<Links> = []
+  links: Array<Links> = [];
+  dropdown: Array<Links> = [];
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -42,21 +42,23 @@ export class HeaderComponent implements OnInit {
       this.document.documentElement.scrollTop ||
       this.document.body.scrollTop ||
       0;
-    const navBar = this.navbar._elementRef.nativeElement
-    const _logo = this.logo.nativeElement
+    const navBar = this.navbar._elementRef.nativeElement;
+    const _logo = this.logo.nativeElement;
     if (offset > 1) {
-      this.renderer.addClass(navBar, 'scrolled')
-      this.renderer.addClass(_logo, 'logo-scrolled')
+      this.renderer.addClass(navBar, "scrolled");
+      this.renderer.addClass(_logo, "logo-scrolled");
     } else {
-      this.renderer.removeClass(navBar, 'scrolled')
-      this.renderer.removeClass(_logo, 'logo-scrolled')
+      this.renderer.removeClass(navBar, "scrolled");
+      this.renderer.removeClass(_logo, "logo-scrolled");
     }
   }
 
   ngOnInit(): void {
-    this.linksService.getLinks()
-    .then(links => this.links = links)
-    this.linksService.getDropdownLinks()
-    .then(dropdown => this.dropdown = dropdown)
+    this.linksService
+      .getLinks()
+      .then(links => (this.links = links));
+    this.linksService
+      .getDropdownLinks()
+      .then(dropdown => (this.dropdown = dropdown));
   }
 }
