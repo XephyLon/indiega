@@ -1,9 +1,11 @@
+import { LinksService } from './../shared/links.service';
+import { Links } from './../shared/links.model';
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
   Inject,
+  OnInit,
   Renderer2,
   ViewChild
 } from "@angular/core";
@@ -16,34 +18,23 @@ import { WINDOW } from "../window.service";
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.sass"]
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements OnInit {
   @ViewChild("navBar")
   private navbar: MatToolbar;
   @ViewChild('logo')
   private logo: ElementRef
+
+  links: Array<Links> = []
+  dropdown: Array<Links> = []
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
     @Inject(WINDOW) private window: Window,
-    public renderer: Renderer2
+    public renderer: Renderer2,
+    private linksService: LinksService
   ) {}
 
-  links = [
-    { title: "homepage", router: "/", hasDropdown: false },
-    { title: "about", router: "", hasDropdown: true },
-    { title: "gallery", router: "/gallery", hasDropdown: false },
-    { title: "games", router: "/games", hasDropdown: false },
-    { title: "blog", router: "/blog", hasDropdown: false },
-    { title: "contact us", router: "/contact-us", hasDropdown: false }
-  ];
-
-  dropdown = [
-    { title: "About Us", router: "/about-us" },
-    { title: "FAQ", router: "/faq" },
-    { title: "Team", router: "/about-us" },
-    { title: "Confession Corner", router: "/confessions" }
-  ];
-
-  // On Scroll function to dynamicall add/remove CSS classes
+  // On Scroll function to dynamically add/remove CSS classes
   @HostListener("window:scroll", [])
   onScroll(): void {
     const offset =
@@ -62,5 +53,10 @@ export class HeaderComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {}
+  ngOnInit(): void {
+    this.linksService.getLinks()
+    .then(links => this.links = links)
+    this.linksService.getDropdownLinks()
+    .then(dropdown => this.dropdown = dropdown)
+  }
 }
