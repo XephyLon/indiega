@@ -40,6 +40,7 @@ import { SummaryComponent } from './about/summary/summary.component';
 import { CountsComponent } from './about/counts/counts.component';
 import { CoreComponent } from './core/core.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
+import { SeekPipe } from './seek.pipe';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { NotFoundComponent } from './global/not-found/not-found.component';
     SummaryComponent,
     CountsComponent,
     CoreComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SeekPipe
   ],
   imports: [
     BrowserModule,
