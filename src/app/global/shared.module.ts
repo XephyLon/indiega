@@ -17,7 +17,6 @@ import { SectionTitleComponent } from "./section-title/section-title.component";
 import { CommonModule } from '@angular/common';
 import { TestimonialsComponent } from "../testimonials/testimonials.component";
 import { NewsletterComponent } from "../homepage/newsletter/newsletter.component";
-import { BreadcrumbComponent } from "./breadcrumb/breadcrumb.component";
 import { RouterModule } from '@angular/router';
 import { TitleHeaderComponent } from '../title-header/title-header.component';
 
@@ -58,14 +57,12 @@ import { TitleHeaderComponent } from '../title-header/title-header.component';
     TestimonialsComponent,
     SectionTitleComponent,
     NewsletterComponent,
-    BreadcrumbComponent,
     TitleHeaderComponent
   ],
   declarations: [
     TestimonialsComponent,
     SectionTitleComponent,
     NewsletterComponent,
-    BreadcrumbComponent,
     TitleHeaderComponent
   ]
 })
