@@ -21,12 +21,21 @@ h1
   text-transform: uppercase
   text-align: center
   margin: 0
+  margin-bottom: 1rem
 
-h3
-  text-align: center
+ul
   font-size: 1rem
   font-weight: 700
   margin: 0
   text-transform: uppercase
   font-family: roboto
-  word-spacing: 1rem
+  padding: 0
+
+.breadcrumb:not(:first-of-type):before
+  content: "/\00a0"
+  padding: 0
+  margin-left: .9rem
+
+a
+  color: #FFF
+  text-align: center

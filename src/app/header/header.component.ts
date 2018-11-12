@@ -19,10 +19,8 @@ import { WINDOW } from "../shared/window.service";
   styleUrls: ["./header.component.sass"]
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild("navBar")
-  private navbar: MatToolbar;
-  @ViewChild("logo")
-  private logo: ElementRef;
+  @ViewChild("navBar") navbar: MatToolbar;
+  @ViewChild("logo") logo: ElementRef;
 
   links: Array<Links> = [];
   dropdown: Array<Links> = [];
@@ -35,8 +33,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   // On Scroll function to dynamically add/remove CSS classes
-  @HostListener("window:scroll", [])
-  onScroll(): void {
+  @HostListener("window:scroll", []) onScroll(): void {
     const offset =
       this.window.pageYOffset ||
       this.document.documentElement.scrollTop ||

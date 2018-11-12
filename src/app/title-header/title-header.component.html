@@ -1,7 +1,11 @@
 <section>
   <div class="bg"></div>
   <div class="_wrapper">
-    <h1>About</h1>
-    <h3>Home / About</h3>
+    <h1> {{breadcrumbs[1].label}} </h1>
+    <ul fxLayout="row" fxLayoutAlign="center center">
+      <li class="breadcrumb" *ngFor="let item of breadcrumbs" >
+        <a [routerLink]="item.url"> {{item.label}} </a>
+      </li>
+    </ul>
   </div>
 </section>

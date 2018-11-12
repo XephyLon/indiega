@@ -1,4 +1,3 @@
-import { BreadcrumbComponent } from './global/breadcrumb/breadcrumb.component';
 import { NgModule } from "@angular/core";
 import { SharedModule } from './global/shared.module';
 import { NgSelectModule } from "@ng-select/ng-select";
@@ -16,8 +15,7 @@ import { WINDOW_PROVIDERS } from "./shared/window.service";
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    BreadcrumbComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
