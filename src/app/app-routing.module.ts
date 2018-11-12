@@ -18,6 +18,11 @@ const routes: Routes = [
     data: { breadcrumb: 'Core Values' }
   },
   {
+    path: 'gallery',
+    loadChildren: './gallery/gallery.module#GalleryModule',
+    data: { breadcrumb: 'Gallery' }
+  },
+  {
     path: '**',
     loadChildren: './global/not-found/not-found.module#NotFoundModule'
   }
