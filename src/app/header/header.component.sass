@@ -9,11 +9,13 @@ a
 mat-toolbar
   background: rgba(map-get($indiega-primary, 500) ,.5) !important
   height: 150px
-  padding: 0 100px
   box-shadow: 3.5px 6.1px 30px rgba(0, 0, 0, 0.57)
   transition: .3s
   &-row
     height: 100%
+
+.mat-toolbar-padding
+  padding: 0 100px
 
 .scrolled
   background: map-get($indiega-primary, 500) !important
@@ -22,8 +24,8 @@ mat-toolbar
 
 .logo
   background-image: url('../../assets/images/logo.png')
-  width: 253px
-  height: 90px
+  width: 150px
+  height: 100px
   transition: all .3s ease-out
   &-scrolled
     transform: scale(.8)

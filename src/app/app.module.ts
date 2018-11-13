@@ -10,12 +10,14 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from './footer/footer.component';
 import { WINDOW_PROVIDERS } from "./shared/window.service";
+import { MatNavList, MatSidenavModule } from "@angular/material";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MatNavList
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { WINDOW_PROVIDERS } from "./shared/window.service";
     BrowserAnimationsModule,
     NgSelectModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    MatSidenavModule
   ],
   providers: [ WINDOW_PROVIDERS ],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { LinksService } from "./../shared/links.service";
 import { Links } from "./../shared/links.model";
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
@@ -9,27 +10,31 @@ import {
   Renderer2,
   ViewChild
 } from "@angular/core";
-import { MatToolbar } from "@angular/material";
+import { MatSidenav, MatToolbar } from "@angular/material";
 import { DOCUMENT } from "@angular/common";
 import { WINDOW } from "../shared/window.service";
+import { AppComponent } from "../app.component";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.sass"]
 })
-export class HeaderComponent implements OnInit {
+
+export class HeaderComponent implements OnInit, AfterViewInit {
   @ViewChild("navBar") navbar: MatToolbar;
   @ViewChild("logo") logo: ElementRef;
 
   links: Array<Links> = [];
   dropdown: Array<Links> = [];
+  sidenav: MatSidenav = this.appComponent.sideNav
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     @Inject(WINDOW) private window: Window,
     public renderer: Renderer2,
-    private linksService: LinksService
+    private linksService: LinksService,
+    private appComponent: AppComponent
   ) {}
 
   // On Scroll function to dynamically add/remove CSS classes
@@ -57,5 +62,8 @@ export class HeaderComponent implements OnInit {
     this.linksService
       .getDropdownLinks()
       .then(dropdown => (this.dropdown = dropdown));
+  }
+
+  ngAfterViewInit(): void {
   }
 }

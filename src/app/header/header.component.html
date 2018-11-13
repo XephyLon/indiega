@@ -1,7 +1,8 @@
 <mat-toolbar #navBar color="primary">
-  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" >
+  <mat-toolbar-row ngClass.gt-md="mat-toolbar-padding" fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center" >
+      <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
       <div #logo class="logo"></div>
-    <ul fxFlex fxHide [fxShow.gt-sm]="true" fxLayoutAlign="space-around">
+    <ul fxFlex fxHide [fxShow.gt-md]="true" fxLayoutAlign="space-around">
       <li *ngFor="let link of links">
         <ng-container *ngIf="link.hasDropdown; then thenTemplate; else elseTemplate"></ng-container>
         <ng-template #thenTemplate>
@@ -13,7 +14,7 @@
 
       </li>
     </ul>
-      <div fxLayoutAlign="center center">
+      <div fxHide fxShow.gt-sm fxLayoutAlign="center center">
         <mat-icon>search</mat-icon>
         <button mat-button color="accent">join us now</button>
       </div>
