@@ -21,8 +21,8 @@
       <button mat-icon-button color="accent" NguCarouselNext class="carouselButton rightRs"><mat-icon class="mat-18">navigate_next</mat-icon></button>
     </ngu-carousel>
     <!-- TODO: Change slide content by clicking on carousel links (Backend implementation) -->
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="card">
-      <div fxFlex="50%" class="card__text">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center" class="card">
+      <div fxFlex fxFlex.gt-md="50%" class="card__text">
         <div fxLayout="row" fxLayoutAlign="space-between center" class="card__top-row">
           <div class="card--tag-style card__text__tag">Games Games Games</div>
           <div class="card--tag-style card__text__date">Apr 25-27, 2018</div>
@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <div class="card__image"></div>
+      <div fxHide [fxShow.gt-md]="true" class="card__image"></div>
     </div>
   </div>
 </section>
