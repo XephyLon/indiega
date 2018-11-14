@@ -1,34 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
+import { UpcomingService } from '../../shared/upcoming.service';
 
 @Component({
   selector: "app-upcoming",
   templateUrl: "./upcoming.component.html",
   styleUrls: ["./upcoming.component.sass"]
 })
-export class UpcomingComponent {
-  tiles = [
-    {
-      title: "Title Sample #1",
-      date: "Text Sample #1",
-      image: "assets/images/game-img-1.jpg"
-    },
-    {
-      title: "Title Sample #2",
-      date: "Text Sample #2",
-      image: "assets/images/game-img-2.jpg"
-    },
-    {
-      title: "Title Sample #3",
-      date: "Text Sample #3",
-      image: "assets/images/game-img-3.jpg"
-    },
-    {
-      title: "Title Sample #4",
-      date: "Text Sample #4",
-      image: "assets/images/game-img-4.jpg"
-    }
-  ];
+export class UpcomingComponent implements OnInit {
+  tiles: Array<Object> = []
 
   public carouselTileConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 3, md: 4, lg: 4, all: 0 },
@@ -43,5 +23,12 @@ export class UpcomingComponent {
   };
 
   tempData: Array<any>;
+
+  constructor(private upcomingService: UpcomingService) {}
+
+  ngOnInit(): void {
+    this.upcomingService.getTitles()
+      .then(titles => this.tiles = titles)
+  }
 
 }
