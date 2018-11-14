@@ -24,7 +24,6 @@ export class TestimonialsComponent implements OnInit {
     animation: "lazy"
   };
 
-
   ngOnInit(): void {
     this.confessionService.getConfessions()
       .then(confessions => this.confessions = confessions)
