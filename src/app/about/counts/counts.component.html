@@ -1,7 +1,7 @@
-<section>
+<section ngClass.lt-md="responsive">
   <div class="overlay"></div>
-  <div fxLayout="row" fxLayoutAlign="space-around center">
-    <div *ngFor="let item of features"  class="feat-wrapper">
+  <div fxFlex.lt-md fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-around center">
+    <div ngClass.lt-md="responsive" *ngFor="let item of features"  class="feat-wrapper">
       <fa-icon [icon]="item.icon"></fa-icon>
       <div class="text-content">
         <h3> {{item.count}} </h3>
