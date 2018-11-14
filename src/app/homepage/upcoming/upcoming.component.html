@@ -2,44 +2,95 @@
   <div fxLayout="column" fxLayoutAlign="start center" class="wrapper">
     <div class="bg"></div>
     <section-title [shadow]="'Shadow Sample #2'">Title Sample</section-title>
-    <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="tiles">
+    <ngu-carousel
+      #myCarousel
+      [inputs]="carouselTileConfig"
+      [dataSource]="tiles"
+    >
       <ngu-tile *nguCarouselDef="let item">
         <li>
           <a fxLayout="column" fxLayoutAlign="center center" href="#">
             <div fxLayoutAlign="center center" class="img-wrapper">
-              <img [src]="item.image" alt="" height="180px" width="180px">
+              <img [src]="item.image" alt="" height="180px" width="180px" />
               <div class="overlay"></div>
             </div>
             <div>
-              <div class="slider-title"> {{ item.title }} </div>
-              <div class="date"> {{ item.date }} </div>
+              <div class="slider-title">{{ item.title }}</div>
+              <div class="date">{{ item.date }}</div>
             </div>
           </a>
         </li>
       </ngu-tile>
-      <button mat-icon-button color="accent" NguCarouselPrev class="carouselButton leftRs"><mat-icon class="mat-18">navigate_before</mat-icon></button>
-      <button mat-icon-button color="accent" NguCarouselNext class="carouselButton rightRs"><mat-icon class="mat-18">navigate_next</mat-icon></button>
+      <button
+        mat-icon-button
+        color="accent"
+        NguCarouselPrev
+        class="carouselButton leftRs"
+      >
+        <mat-icon class="mat-18">navigate_before</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="accent"
+        NguCarouselNext
+        class="carouselButton rightRs"
+      >
+        <mat-icon class="mat-18">navigate_next</mat-icon>
+      </button>
     </ngu-carousel>
-    <!-- TODO: Change slide content by clicking on carousel links (Backend implementation) -->
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center" class="card" ngClass.lt-sm="card--responsive">
-      <div fxFlex fxFlex.gt-md="50%" ngClass.lt-md="card__text--responsive" class="card__text">
-        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center" class="card__top-row">
+    <!--
+      TODO: Change slide content by clicking on carousel links (Backend implementation)
+    -->
+    <div
+      fxLayout="row"
+      fxLayout.lt-md="column"
+      fxLayoutAlign="space-between center"
+      class="card"
+      ngClass.lt-sm="card--responsive"
+    >
+      <div
+        fxFlex
+        fxFlex.gt-md="50%"
+        ngClass.lt-md="card__text--responsive"
+        class="card__text"
+      >
+        <div
+          fxLayout="row"
+          fxLayout.lt-sm="column"
+          fxLayoutAlign="space-between center"
+          class="card__top-row"
+        >
           <div class="card--tag-style card__text__tag">Games Games Games</div>
           <div class="card--tag-style card__text__date">Apr 25-27, 2018</div>
         </div>
-        <h3 class="card__text__title">Title Sample</h3>
+        <h3 class="card__text__title" ngClass.lt-md="responsive">Title Sample</h3>
         <div class="card__text__paragraph">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione vel vero officiis blanditiis? A
-            explicabo ut
-            neque?
-            Ea doloribus culpa saepe quibusdam, aspernatur quidem eaque laborum. Impedit sapiente iste magnam!</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione vel vero officiis blanditiis? A
-            explicabo ut
-            neque?
-            Ea doloribus culpa saepe quibusdam, aspernatur quidem eaque laborum. Impedit sapiente iste magnam!</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            vel vero officiis blanditiis? A explicabo ut neque? Ea doloribus
+            culpa saepe quibusdam, aspernatur quidem eaque laborum. Impedit
+            sapiente iste magnam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            vel vero officiis blanditiis? A explicabo ut neque? Ea doloribus
+            culpa saepe quibusdam, aspernatur quidem eaque laborum. Impedit
+            sapiente iste magnam!
+          </p>
         </div>
-        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between end">
-          <a fxFlexAlign="end" mat-button href="" class="card__text__button" [ngStyle.lt-sm]="{'marginBottom': '1rem'}">Read More</a>
+        <div
+          fxLayout="row"
+          fxLayout.lt-sm="column"
+          fxLayoutAlign="space-between end"
+        >
+          <a
+            fxFlexAlign="end"
+            mat-button
+            href=""
+            class="card__text__button"
+            [ngStyle.lt-sm]="{ marginBottom: '1rem' }"
+            >Read More</a
+          >
           <div class="card__text__rate">
             <mat-icon>star_rate</mat-icon>
             <mat-icon>star_rate</mat-icon>

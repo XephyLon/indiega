@@ -2,6 +2,8 @@
 footer
   position: relative
   background-image: url('../../assets/images/footer-bg.jpg')
+  background-repeat: no-repeat
+  background-size: cover
 
 .footer-content-wrapper
   padding: 6rem 0
@@ -22,13 +24,15 @@ p
 
 .logo
   background-image: url("../../assets/images/logo.png")
-  width: 253px
-  height: 90px
+  width: 150px
+  height: 100px
   z-index: 9
 
 .footer-text
   text-align: right
   margin-bottom: 2rem
+  &.responsive
+    text-align: center
 
 .social-media__link
   color: #FFF
@@ -42,3 +46,6 @@ p
   border-top: 1px solid map-get($indiega-indigo, 100)
   & p
     padding: 1.5rem
+
+._wrapper
+  padding: 1rem 1.3rem !important

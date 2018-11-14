@@ -1,25 +1,45 @@
 <mat-toolbar ngClass.lt-md="responsive__toolbar" #navBar color="primary">
-  <mat-toolbar-row ngClass.gt-md="mat-toolbar-padding" fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center" >
-      <button fxHide fxShow.lt-md mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-      <div #logo class="logo" ngClass.lt-md="responsive__logo"></div>
+  <mat-toolbar-row
+    ngClass.gt-md="mat-toolbar-padding"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxLayoutAlign.gt-sm="space-between center"
+  >
+    <button
+      fxHide
+      fxShow.lt-md
+      mat-icon-button
+      color="accent"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon [ngStyle.lt-md]="{ 'lineHeight': '0', 'position': 'absolute', 'left': '3px' }">menu</mat-icon>
+    </button>
+    <div #logo class="logo" ngClass.lt-md="responsive__logo"></div>
     <ul fxFlex fxHide [fxShow.gt-md]="true" fxLayoutAlign="space-around">
       <li *ngFor="let link of links">
-        <ng-container *ngIf="link.hasDropdown; then thenTemplate; else elseTemplate"></ng-container>
+        <ng-container
+          *ngIf="link.hasDropdown; then: thenTemplate; else: elseTemplate"
+        ></ng-container>
         <ng-template #thenTemplate>
           <a mat-button [mat-menu-trigger-for]="menu">{{ link.title }}</a>
         </ng-template>
         <ng-template #elseTemplate>
           <a [routerLink]="link.router" mat-button>{{ link.title }}</a>
         </ng-template>
-
       </li>
     </ul>
-      <div fxHide fxShow.gt-sm fxLayoutAlign="center center">
-        <mat-icon>search</mat-icon>
-        <button mat-button color="accent">join us now</button>
-      </div>
+    <div fxHide fxShow.gt-sm fxLayoutAlign="center center">
+      <mat-icon>search</mat-icon>
+      <button mat-button color="accent">join us now</button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-menu xposition="before" #menu="matMenu">
-  <button *ngFor="let item of dropdown" mat-menu-item [routerLink]="item.router"> {{ item.title }} </button>
+  <button
+    *ngFor="let item of dropdown"
+    mat-menu-item
+    [routerLink]="item.router"
+  >
+    {{ item.title }}
+  </button>
 </mat-menu>
