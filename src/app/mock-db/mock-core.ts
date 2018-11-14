@@ -28,6 +28,6 @@ export const CORE_VALUES: Array<CoreValues> = [
     subtitle: ``,
     text: `We’ve found that the most valuable players are actively interested in Wildstar.
        Maybe not all day every day, but people that habitually don’t give a shit will have poor execution.
-        If you’re on the way out the door, Enigma is not the place for you.`
+        If you’re on the way out the door, Indiega is not the place for you.`
   }
 ]
