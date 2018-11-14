@@ -5,7 +5,7 @@ export const LINKS: Array<Links> = [
   { title: "about", router: "/about-us", hasDropdown: false },
   { title: "gallery", router: "/gallery", hasDropdown: false },
   { title: "FAQ", router: "/faq", hasDropdown: false },
-  { title: "Confession Corner", router: "/confessions", hasDropdown: false },
+  { title: "Confession Corner", router: "/confessions", hasDropdown: false }
   // { title: "games", router: "/games", hasDropdown: false },
   // { title: "blog", router: "/blog", hasDropdown: false },
   // { title: "contact us", router: "/contact-us", hasDropdown: false }
