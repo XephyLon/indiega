@@ -69,7 +69,7 @@ body {
   font-family: 'Agency FB';
   color: #FFF;
   text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
-  background-color: map-get($indiega-primary, 600);
+  background-color: map-get($indiega-primary, 600) !important;
   overflow-x: hidden;
 }
 
@@ -119,4 +119,9 @@ li {
   transform: scale(1.2);
   color: map-get($indiega-accent, 200);
   transition: all .25s ease-out;
+}
+
+.mat-drawer-container {
+  color: inherit !important;
+  background-color: inherit !important
 }

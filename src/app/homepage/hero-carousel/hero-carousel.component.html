@@ -7,8 +7,8 @@
       [style.backgroundSize]="'cover'"
       [style.backgroundPosition]="'50% 50%'"></div>
       <div class="content" fxLayout="column" fxLayoutAlign="center center">
-        <h3> {{ item.subtitle }} </h3>
-        <h2> {{ item.title }} </h2>
+        <h3 ngClass.lt-md="responsive__h3"> {{ item.subtitle }} </h3>
+        <h2 ngClass.lt-md="responsive__h2"> {{ item.title }} </h2>
         <p> {{ item.text }} </p>
         <button mat-raised-button> {{ item.buttonText }} </button>
       </div>
