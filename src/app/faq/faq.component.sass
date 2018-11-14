@@ -12,6 +12,12 @@ p
   color: map-get($indiega-indigo, 100)
   text-align: center
   line-height: 1.5rem
+  &.responsive-p
+    padding: 0 1rem !important
+
+section-title
+  &.responsive-st
+    padding-left: .5rem !important
 
 
 .count
@@ -23,6 +29,8 @@ p
   line-height: 100px
   text-align: center
   margin: 1.3rem
+  &.responsive-count
+    transform: scale(.8)
 
 ._wrapper
   border-bottom: 1px solid map-get($indiega-primary, 300)
@@ -47,3 +55,12 @@ p
 
 .content
   margin-top: 5.625rem
+
+.responsive
+  padding: 1.3rem
+  & p
+    text-align: left
+    font-size: .9rem
+  & h2
+    font-size: 1.5rem
+    font-weight: 100

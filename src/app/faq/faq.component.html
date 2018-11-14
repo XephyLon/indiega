@@ -1,15 +1,25 @@
 <section fxLayout="row" fxLayoutAlign="center center">
   <div  fxLayout="column" fxLayoutAlign="center center" class="wrapper">
     <div fxLayout="column" fxLayoutAlign="center center">
-      <section-title fxFlex [shadow]="'You should know this'">
+      <section-title fxFlex [shadow]="'You should know this'" ngClass.lt-md="responsive-st">
         Frequently Asked Questions
       </section-title>
-      <p fxFlex="20%">Corned beef ham frankfurter cow, strip steak shoulder doner flank. Pork chop spare ribs
+      <p fxFlex="20%" ngClass.lt-md="responsive-p">Corned beef ham frankfurter cow, strip steak shoulder doner flank. Pork chop spare ribs
       pork ball tip. Prosciutto jowl meatball shankю</p>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center" class="content">
-      <div fxFlex="50%" fxLayoutAlign="center center" *ngFor="let item of faqs; let i = index"  class="_wrapper">
-        <div fxFlexAlign="start" class="count"> 0{{ i + 1 }} </div>
+    <div
+      fxLayout="row wrap"
+      fxLayout.lt-md="column"
+      fxLayoutAlign="center center"
+      class="content">
+      <div
+        fxFlex="50%"
+        fxLayout.lt-sm="column"
+        fxLayoutAlign="center center"
+        *ngFor="let item of faqs; let i = index"
+        ngClass.gt-sm="_wrapper"
+        ngClass.lt-md="responsive">
+        <div ngClass.lt-sm="responsive-count" fxFlexAlign="start" class="count"> 0{{ i + 1 }} </div>
         <div>
           <h2> {{ item.title }} </h2>
           <p> {{ item.text }} </p>

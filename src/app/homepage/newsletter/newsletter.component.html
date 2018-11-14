@@ -1,9 +1,9 @@
 <section fxLayout="row" fxLayoutAlign="center center">
-  <div fxFlex fxLayout="row" fxLayoutAlign="space-around center" class="wrapper">
-    <div fxLayout="column" fxLayoutAlign="center start">
+  <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-around center" class="wrapper">
+    <div fxLayout="column" fxLayoutAlign="center start" fxLayoutAlign.lt-md="center center">
       <section-title [shadow]="'newsletter'">Register for our newletter now</section-title>
-      <p>We are always ready to welcome you!</p>
+      <p ngClass.lt-md="responsive">We are always ready to welcome you!</p>
     </div>
-    <input fxFlexAlign="start" fxFlex="45%" placeholder="E-mail">
+    <input ngClass.lt-md="responsive" fxFlexAlign="start" fxFlexAlign.lt-md="center" fxFlex="45%" placeholder="E-mail">
   </div>
 </section>
