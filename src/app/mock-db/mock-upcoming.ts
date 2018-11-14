@@ -1,4 +1,5 @@
-export const TITLES = [
+import { Upcoming } from './../shared/upcoming.model';
+export const TITLES: Array<Upcoming> = [
   {
     title: "Title Sample #1",
     date: "Text Sample #1",

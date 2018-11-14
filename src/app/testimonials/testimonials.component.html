@@ -3,9 +3,9 @@
     <section-title fxFlex [shadow]="'All Reviews'">
       Testimonials
     </section-title>
-    <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="blockQuotes">
+    <ngu-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="confessions">
       <ngu-tile *nguCarouselDef="let item">
-        <blockquote>
+        <blockquote ngClass.lt-md="responsive-bq">
           <div class="image"></div>
           <mat-icon>
             format_quote

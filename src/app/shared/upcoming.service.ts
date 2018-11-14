@@ -1,3 +1,4 @@
+import { Upcoming } from './upcoming.model';
 import { Injectable } from '@angular/core';
 import { TITLES } from '../mock-db/mock-upcoming';
 
@@ -5,7 +6,7 @@ import { TITLES } from '../mock-db/mock-upcoming';
   providedIn: 'root'
 })
 export class UpcomingService {
-  getTitles(): Promise<Array<Object>> {
+  getTitles(): Promise<Array<Upcoming>> {
     return Promise.resolve(TITLES)
   }
 }
