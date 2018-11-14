@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   links: Array<Links> = [];
   dropdown: Array<Links> = [];
-  sidenav: MatSidenav = this.appComponent.sideNav
+  sidenav: MatSidenav
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -65,5 +65,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.sidenav = this.appComponent.sideNav
   }
 }

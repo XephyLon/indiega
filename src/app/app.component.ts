@@ -14,7 +14,7 @@ import { MatSidenav } from "@angular/material";
   providers: [LinksService]
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('#sideNav') public sideNav: MatSidenav
+  @ViewChild('sideNav') public sideNav: MatSidenav
   public breadcrumbs: Array<BreadCrumb>;
   public links: Array<Links>;
   private root: ActivatedRoute = this.route.root;
