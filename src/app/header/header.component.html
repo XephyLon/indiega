@@ -15,7 +15,7 @@
       <mat-icon [ngStyle.lt-md]="{ 'lineHeight': '0', 'position': 'absolute', 'left': '3px' }">menu</mat-icon>
     </button>
     <div #logo class="logo" ngClass.lt-md="responsive__logo"></div>
-    <ul fxFlex fxHide [fxShow.gt-md]="true" fxLayoutAlign="space-around">
+    <ul fxFlex fxHide [fxShow.gt-sm]="true" fxLayoutAlign="space-around">
       <li *ngFor="let link of links">
         <ng-container
           *ngIf="link.hasDropdown; then: thenTemplate; else: elseTemplate"

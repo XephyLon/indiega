@@ -1,6 +1,6 @@
 <app-title-header></app-title-header>
-<section fxLayout="row" fxLayoutAlign="center center">
-  <div fxFlex class="wrapper">
-    <ngx-masonry-gallery [width]="300" [images]="images" [gutter]="16" [verticalGutter]="16"></ngx-masonry-gallery>
+<section>
+  <div class="wrapper" ngClass.lt-sm="responsive">
+    <ngx-masonry-gallery fxFlexalign="center" [width]="300" [images]="images" [gutter]="10" [verticalGutter]="10"></ngx-masonry-gallery>
   </div>
 </section>
