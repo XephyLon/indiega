@@ -1,7 +1,7 @@
-<mat-toolbar #navBar color="primary">
+<mat-toolbar ngClass.lt-md="responsive__toolbar" #navBar color="primary">
   <mat-toolbar-row ngClass.gt-md="mat-toolbar-padding" fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-between center" >
-      <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-      <div #logo class="logo"></div>
+      <button fxHide fxShow.lt-md mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      <div #logo class="logo" ngClass.lt-md="responsive__logo"></div>
     <ul fxFlex fxHide [fxShow.gt-md]="true" fxLayoutAlign="space-around">
       <li *ngFor="let link of links">
         <ng-container *ngIf="link.hasDropdown; then thenTemplate; else elseTemplate"></ng-container>

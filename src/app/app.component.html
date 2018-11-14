@@ -1,7 +1,15 @@
 <mat-sidenav-container>
   <mat-sidenav #sideNav mode="over" fixedInViewport>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let link of links">{{ link.title }}</a>
+      <ng-container *ngFor="let link of links" >
+      <ng-container *ngIf="link.hasDropdown; then thenTemplate; else elseTemplate"></ng-container>
+      <ng-template #thenTemplate>
+        <a mat-menu-item [mat-menu-trigger-for]="menu">{{ link.title }}</a>
+      </ng-template>
+      <ng-template #elseTemplate>
+        <a [routerLink]="link.router" mat-menu-item>{{ link.title }}</a>
+      </ng-template>
+      </ng-container>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -10,3 +18,6 @@
     <!-- <app-footer></app-footer> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
+<mat-menu xposition="before" #menu="matMenu">
+  <button *ngFor="let item of dropdown" mat-menu-item [routerLink]="item.router"> {{ item.title }} </button>
+</mat-menu>

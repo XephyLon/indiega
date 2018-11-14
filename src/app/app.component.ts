@@ -14,9 +14,10 @@ import { MatSidenav } from "@angular/material";
   providers: [LinksService]
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('sideNav') public sideNav: MatSidenav
+  @ViewChild("sideNav") public sideNav: MatSidenav;
   public breadcrumbs: Array<BreadCrumb>;
   public links: Array<Links>;
+  public dropdown: Array<Links>;
   private root: ActivatedRoute = this.route.root;
 
   constructor(
@@ -36,11 +37,15 @@ export class AppComponent implements AfterViewInit {
 
         return this.breadcrumbs;
       });
-    this.linkService.getLinks()
-      .then(links => (this.links = links))
+    this.linkService
+      .getLinks()
+      .then(links => (this.links = links));
+    this.linkService
+      .getDropdownLinks()
+      .then(dropdown => (this.dropdown = dropdown));
   }
 
   getCrumbs(): Promise<Array<BreadCrumb>> {
-    return Promise.resolve(this.breadcrumbs)
+    return Promise.resolve(this.breadcrumbs);
   }
 }
