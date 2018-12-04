@@ -1,4 +1,4 @@
-import { CoreValues } from "../shared/core.model";
+import { CoreValues } from "../shared/models/core.model";
 
 export const CORE_VALUES: Array<CoreValues> = [
   {

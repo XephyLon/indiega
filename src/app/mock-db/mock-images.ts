@@ -1,4 +1,4 @@
-import { Image } from "../shared/images.model";
+import { Image } from "../shared/models/images.model";
 
 export const IMAGES: Array<Image> = [
   { imageUrl: 'assets/images/585x550.jpg', alt: 'Man holding a game controller' },

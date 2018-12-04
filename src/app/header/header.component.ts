@@ -1,5 +1,5 @@
-import { LinksService } from "./../shared/links.service";
-import { Links } from "./../shared/links.model";
+import { LinksService } from "../shared/services/links.service";
+import { Links } from "../shared/models/links.model";
 import {
   AfterViewInit,
   Component,
@@ -12,7 +12,7 @@ import {
 } from "@angular/core";
 import { MatSidenav, MatToolbar } from "@angular/material";
 import { DOCUMENT } from "@angular/common";
-import { WINDOW } from "../shared/window.service";
+import { WINDOW } from "../shared/services/window.service";
 import { AppComponent } from "../app.component";
 
 @Component({

@@ -1,6 +1,6 @@
-import { CoreService } from './../shared/core.service';
+import { CoreService } from '../shared/services/core.service';
 import { Component, OnInit } from '@angular/core';
-import { CoreValues } from '../shared/core.model';
+import { CoreValues } from '../shared/models/core.model';
 
 @Component({
   selector: `app-core`,

@@ -1,4 +1,4 @@
-import { Confession } from "../shared/confessions.model";
+import { Confession } from "../shared/models/confessions.model";
 
 export const CONFESSIONS: Array<Confession> = [
   {

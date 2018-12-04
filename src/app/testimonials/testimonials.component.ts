@@ -1,7 +1,7 @@
-import { ConfessionsService } from './../shared/confessions.service';
+import { ConfessionsService } from '../shared/services/confessions.service';
 import { Component, OnInit } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
-import { Confession } from '../shared/confessions.model';
+import { Confession } from '../shared/models/confessions.model';
 
 @Component({
   selector: "app-testimonials",

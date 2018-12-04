@@ -1,10 +1,10 @@
 import { BreadcrumbService } from "./global/breadcrumb/breadcrumb.service";
-import { LinksService } from "./shared/links.service";
+import { LinksService } from "./shared/services/links.service";
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { BreadCrumb } from "./global/breadcrumb/breadcrumb.interface";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { filter } from "rxjs/operators";
-import { Links } from "./shared/links.model";
+import { Links } from "./shared/models/links.model";
 import { MatSidenav } from "@angular/material";
 
 @Component({

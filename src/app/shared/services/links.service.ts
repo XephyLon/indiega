@@ -1,5 +1,5 @@
-import { DROPDOWN_LINKS, LINKS } from './../mock-db/mock-links';
-import { Links } from './links.model';
+import { DROPDOWN_LINKS, LINKS } from '../../mock-db/mock-links';
+import { Links } from '../models/links.model';
 import { Injectable } from '@angular/core';
 
 @Injectable()

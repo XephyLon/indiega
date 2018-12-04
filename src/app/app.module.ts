@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from './footer/footer.component';
-import { WINDOW_PROVIDERS } from "./shared/window.service";
+import { WINDOW_PROVIDERS } from "./shared/services/window.service";
 import { MatListModule, MatSidenavModule } from "@angular/material";
 
 @NgModule({

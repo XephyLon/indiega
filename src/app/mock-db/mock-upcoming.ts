@@ -1,4 +1,4 @@
-import { Upcoming } from './../shared/upcoming.model';
+import { Upcoming } from '../shared/models/upcoming.model';
 export const TITLES: Array<Upcoming> = [
   {
     title: "Title Sample #1",

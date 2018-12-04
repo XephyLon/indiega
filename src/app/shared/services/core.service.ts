@@ -1,6 +1,6 @@
-import { CORE_VALUES } from './../mock-db/mock-core';
+import { CORE_VALUES } from '../../mock-db/mock-core';
 import { Injectable } from '@angular/core';
-import { CoreValues } from './core.model';
+import { CoreValues } from '../models/core.model';
 
 @Injectable({
   providedIn: 'root'

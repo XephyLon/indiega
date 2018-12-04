@@ -1,5 +1,5 @@
-import { Image } from './../../shared/images.model';
-import { ImagesService } from './../../shared/images.service';
+import { Image } from '../../shared/models/images.model';
+import { ImagesService } from '../../shared/services/images.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

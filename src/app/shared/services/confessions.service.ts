@@ -1,6 +1,6 @@
-import { CONFESSIONS } from './../mock-db/mock-confessions';
+import { CONFESSIONS } from '../../mock-db/mock-confessions';
 import { Injectable } from '@angular/core';
-import { Confession } from './confessions.model';
+import { Confession } from '../models/confessions.model';
 
 @Injectable({
   providedIn: 'root'

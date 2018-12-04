@@ -1,5 +1,5 @@
-import { StatsService } from './../../shared/stats.service';
-import { Features } from './../../shared/stats.model';
+import { Features } from './../../shared/models/stats.model';
+import { StatsService } from '../../shared/services/stats.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

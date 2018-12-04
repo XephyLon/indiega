@@ -1,4 +1,4 @@
-import { Links } from "../shared/links.model";
+import { Links } from "../shared/models/links.model";
 
 export const LINKS: Array<Links> = [
   { title: "homepage", router: "/", hasDropdown: false },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
-import { UpcomingService } from '../../shared/upcoming.service';
+import { UpcomingService } from '../../shared/services/upcoming.service';
 
 @Component({
   selector: "app-upcoming",

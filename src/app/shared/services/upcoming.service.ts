@@ -1,6 +1,6 @@
-import { Upcoming } from './upcoming.model';
+import { Upcoming } from '../models/upcoming.model';
 import { Injectable } from '@angular/core';
-import { TITLES } from '../mock-db/mock-upcoming';
+import { TITLES } from '../../mock-db/mock-upcoming';
 
 @Injectable({
   providedIn: 'root'
